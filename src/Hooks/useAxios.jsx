@@ -11,7 +11,6 @@ const useAxios = () => {
 
   instance.interceptors.request.use(function (config) {
     const token = localStorage.getItem('access-token');
-    console.log('stop by interceptors', token);
     config.headers.authorization = `bearer ${token}`;
     return config;
   }, function (error) {
