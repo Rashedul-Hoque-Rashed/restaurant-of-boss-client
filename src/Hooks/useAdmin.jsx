@@ -14,7 +14,6 @@ const useAdmin = () => {
             return res?.data?.isAdmin
         }
     })
-console.log(isAdmin)
     return [isAdmin, isAdminLoading]
 };
 

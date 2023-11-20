@@ -34,7 +34,7 @@ const Dashboard = () => {
                     <FaHome className="w-6 h-6" />User Home</div></NavLink></li>
                 <li><NavLink to="/dashboard/reservation" className={({ isActive }) => isActive ? "text-white font-bold" : ""}> <div className="flex items-center gap-4">
                     <SlCalender className="w-6 h-6" />Reservation</div></NavLink></li>
-                <li><NavLink to="/dashboard/payment" className={({ isActive }) => isActive ? "text-white font-bold" : ""}> <div className="flex items-center gap-4">
+                <li><NavLink to="/dashboard/paymentHistory" className={({ isActive }) => isActive ? "text-white font-bold" : ""}> <div className="flex items-center gap-4">
                     <IoWalletSharp className="w-6 h-6" />Payment History</div></NavLink></li>
                 <li><NavLink to="/dashboard/cart" className={({ isActive }) => isActive ? "text-white font-bold" : ""}> <div className="flex items-center gap-4">
                     <FaShoppingCart className="w-6 h-6" />My cart</div></NavLink></li>

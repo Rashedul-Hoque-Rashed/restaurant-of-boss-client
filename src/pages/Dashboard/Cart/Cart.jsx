@@ -3,6 +3,7 @@ import SectionTitle from "../../../Components/SectionTitle";
 import useCart from "../../../Hooks/useCart";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import useAxios from "../../../Hooks/useAxios";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -46,7 +47,11 @@ const Cart = () => {
                 <div className="flex items-center justify-between mb-8">
                     <h4 className="text-3xl font-bold font-cinzel uppercase">Total orders: {cart.length}</h4>
                     <h4 className="text-3xl font-bold font-cinzel uppercase">Total price: ${totalPrice}</h4>
-                    <button className="uppercase text-xl font-bold font-cinzel text-white bg-[#D1A054] px-4 py-3 rounded-xl">Pay</button>
+                    {
+                        cart.length ? <Link to="/dashboard/payment">
+                        <button className="uppercase text-xl font-bold font-cinzel text-white bg-[#D1A054] px-4 py-3 rounded-xl">Pay</button>
+                        </Link> : <button disabled className="btn uppercase text-xl font-bold font-cinzel px-4 py-3 rounded-xl">Pay</button>
+                    }
                 </div>
                 <div className="overflow-x-auto rounded-t-2xl">
                     <table className="table">
