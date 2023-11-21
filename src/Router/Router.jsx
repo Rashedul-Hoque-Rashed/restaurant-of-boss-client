@@ -17,6 +17,7 @@ import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import Update from "../pages/Dashboard/Update/Update";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 
 
 export const router = createBrowserRouter([
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
         element: <AdminRouter><AllUsers /></AdminRouter>
       },
       {
+        path: "adminHome",
+        element: <AdminRouter><AdminHome /></AdminRouter>
+      },
+      {
         path: "addItems",
         element: <AdminRouter><AddItems /></AdminRouter>
       },
@@ -85,7 +90,7 @@ export const router = createBrowserRouter([
       {
         path: "updateItems/:id",
         element: <AdminRouter><Update /></AdminRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
+        loader: ({ params }) => fetch(`http://restaurant-of-boss-server.vercel.app/menu/${params.id}`)
       },
 
     ]

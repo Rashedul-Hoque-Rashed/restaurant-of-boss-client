@@ -5,17 +5,19 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { TiShoppingCart } from "react-icons/ti";
 import useCart from "../../../Hooks/useCart";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const Navigate = useNavigate()
     const [cart] = useCart();
+    const [isAdmin] = useAdmin();
 
     const navOptions = <>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Home</NavLink></li>
         <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Contact Us</NavLink></li>
-        <li><NavLink to="/dashboard" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Dashboard</NavLink></li>
+        <li><NavLink to={isAdmin ? "/dashboard/adminHome" : "/dashboard/userHome"} className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Dashboard</NavLink></li>
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Our Menu</NavLink></li>
         <li><NavLink to="/shop/salad" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}>Our Shop</NavLink></li>
         <li><NavLink to="/dashboard/cart" className={({ isActive }) => isActive ? "text-[#EEFF25]" : ""}> <div className="flex items-center">

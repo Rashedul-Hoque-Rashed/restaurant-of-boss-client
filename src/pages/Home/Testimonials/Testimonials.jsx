@@ -11,7 +11,7 @@ import { BsQuote } from 'react-icons/bs';
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('http://restaurant-of-boss-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

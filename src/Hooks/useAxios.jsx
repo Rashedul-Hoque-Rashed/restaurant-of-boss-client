@@ -4,7 +4,7 @@ import { auth } from "../Config/firebase.config";
 
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://restaurant-of-boss-server.vercel.app',
   });
 
 const useAxios = () => {
